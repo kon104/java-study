@@ -1,17 +1,20 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 public class ExpReflection extends ExpBase {
 
 	public static void main(String[] args) {
 		String path = "./java-study/input-reflection.txt";
-		LinkedList<String> lines = readFileToList(path);
+		Scanner sc = fetchFileToScanner(path);
+//		sc.nextLine();
 
 		long startTimeNs = System.nanoTime();
 		
-		int test_case = 0;
-		for(String l: lines){
-			test_case++;
-			char[] charSrc = l.toCharArray();
+		for (int test_case = 1; sc.hasNext(); test_case++) {
+			String line = sc.nextLine();
+			char[] charSrc = line.toCharArray();
 			char[] charDst = new char[charSrc.length];
 			for (int i = 0; i < charSrc.length; i++) {
 				char c = '-';
@@ -36,12 +39,10 @@ public class ExpReflection extends ExpBase {
 			String strAns = new String(charDst);
 			System.out.println("#" + test_case + " " + strAns);
 		}
+		sc.close();
 
 		long endTimeNs = System.nanoTime();
-		double diffNs = (endTimeNs - startTimeNs) / 1000000000.0;
-		System.out.printf("処理時間: %.10f sec", diffNs);
-
-
+		printProcessingTime(startTimeNs, endTimeNs);
 	}
 
 }
