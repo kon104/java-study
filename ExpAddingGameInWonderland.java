@@ -9,9 +9,9 @@ public class ExpAddingGameInWonderland extends ExpBase {
 		for (int test_case = 1; sc.hasNext(); test_case++) {
 			int num = sc.nextInt();
 			int count = 0;
-			do {
+			while(num >= 10) {
 				count++;
-				System.out.println("\t1)" + num);
+//				System.out.println("\t" + num);
 				if (num > 999) {
 					int d1 = (int)(Math.floor(num / 1000));
 					int d2 = (int)(Math.floor(num / 100) % 10);
@@ -43,9 +43,9 @@ public class ExpAddingGameInWonderland extends ExpBase {
 					int d2 = num % 10;
 					num = Integer.parseInt(String.format("%d", d1 + d2));
 				}
-			} while(num >= 10);
-			System.out.println(num);
-			System.out.println("#" + test_case + " " + ((count % 2) == 0 ? "A" : "B" ));
+			}
+//			System.out.println("\t" + num);
+			System.out.println("#" + test_case + " " + ((count % 2) == 0 ? "B" : "A" ));
 		}
 		sc.close();
 
