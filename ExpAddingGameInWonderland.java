@@ -11,11 +11,11 @@ public class ExpAddingGameInWonderland extends ExpBase {
 			int count = 0;
 			while(num >= 10) {
 				count++;
-//				System.out.println("\t" + num);
+				System.out.println("\t" + num);
 				if (num > 999) {
-					int d1 = (int)(Math.floor(num / 1000));
-					int d2 = (int)(Math.floor(num / 100) % 10);
-					int d3 = (int)(Math.floor(num / 10) % 10);
+					int d1 = (int)(num / 1000);
+					int d2 = ((int)(num / 100)) % 10;
+					int d3 = ((int)(num / 10)) % 10;
 					int d4 = num % 10;
 					int x1 = Integer.parseInt(String.format("%d%d%d", d1 + d2, d3, d4));
 					int x2 = Integer.parseInt(String.format("%d%d%d", d1, d2 + d3, d4));
@@ -28,8 +28,8 @@ public class ExpAddingGameInWonderland extends ExpBase {
 						num = x3;
 					}
 				} else if (num > 99) {
-					int d1 = (int)(Math.floor(num / 100) % 10);
-					int d2 = (int)(Math.floor(num / 10) % 10);
+					int d1 = ((int)(num / 100)) % 10;
+					int d2 = ((int)(num / 10)) % 10;
 					int d3 = num % 10;
 					int x1 = Integer.parseInt(String.format("%d%d", d1 + d2, d3));
 					int x2 = Integer.parseInt(String.format("%d%d", d1, d2 + d3));
@@ -39,9 +39,9 @@ public class ExpAddingGameInWonderland extends ExpBase {
 						num = x2;
 					}
 				} else if (num > 9) {
-					int d1 = (int)(Math.floor(num / 10) % 10);
+					int d1 = ((int)(num / 10)) % 10;
 					int d2 = num % 10;
-					num = Integer.parseInt(String.format("%d", d1 + d2));
+					num = d1 + d2;
 				}
 			}
 //			System.out.println("\t" + num);
