@@ -16,8 +16,8 @@ public class ExpAddingGameInWonderland extends ExpBase {
 			while (src.length > 1) {
 				count++;
 
-//				char[] dst = makeNextValMax(src);
-				char[] dst = makeNextValMin(src);
+				char[] dst = makeNextValMax(src);
+//				char[] dst = makeNextValMin(src);
 
 //				System.out.println("\t(" + ((count % 2) == 0 ? 'A' : 'B') + ")next=" + String.valueOf(dst));
 				src = Arrays.copyOf(dst, dst.length);
